@@ -1,8 +1,17 @@
 let express = require("express");
+let mongoose = require("mongoose")
 let hrroutes = require("./routes/hr_routes");
+let emproutes = require("./routes/emp_routes");
 let app = express();
 
+app.use(express.json());
 app.use("/api/hr", hrroutes);
+app.use("/api/emp", emproutes);
+
+// connect with out mongodb hrmanagement database
+mongoose.connect("mongodb://localhost:27017/hrmanagement").then(
+    ()=>console.log("Database connected successfully")
+).catch((err)=>console.log(err));
 
 // //local host: 3000/
 // app.get("/", (req, res)=>{
