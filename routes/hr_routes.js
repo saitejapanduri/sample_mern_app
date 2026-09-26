@@ -8,6 +8,13 @@ router.get("/employees", async (req, res)=>{
 // open post ,amn => choose get method 
 // localhost:3000/api/hr/employees
 
+router.delete("/deleteemp/:id", async (req, res)=> {
+    let result = await users.findByIdAndDelete(req.params.id);
+    if (result) {
+        res.send("emp record delete success");
+    }
+})
+
 router.post("/assign-task", (req, res)=>{
     res.send("assign task page called");
 })
