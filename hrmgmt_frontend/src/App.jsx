@@ -1,12 +1,26 @@
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Home from './pages/Home'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import Services from './pages/Services'
+import Login from './pages/Login'
+
+import {Routes, Route} from 'react-router-dom'
 
 function App() {
   return (
     <div>
       <Header></Header>
-      <h1> My first React Application </h1>
-      <h4> created by Sai Teja </h4>
+
+      <Routes>
+        <Route path = "/" element = {<Home></Home>}></Route>
+        <Route path = "/about" element = {<About></About>}></Route>
+        <Route path = "/contact" element = {<Contact></Contact>}></Route>
+        <Route path = "/services" element = {<Services></Services>}></Route>
+        <Route path = "/login" element = {<Login></Login>}></Route>
+      </Routes>
+
       <Footer></Footer>
     </div>
 
