@@ -1,7 +1,27 @@
+import { useState } from 'react'
 function Login() {
+    let [emailid, setEmailid] = useState("")
+    let [password, setPassword] = useState("") 
+    let handleLogin = (e)=>{
+        e.preventDefault()
+        if (emailid == "admin@gmail.com" && password == "admin") {
+            console.log("login success")
+        } else {
+            console.log("login falied")
+        }
+    }
     return(
         <div>
-            <h1>Login Page called</h1>
+            <form onSubmit = {handleLogin}> 
+                <input type="text" value = {emailid} onChange = {(event)=>setEmailid(event.target.value)} placeholder = "Enter emailId"></input> <br/>
+                <input type="password" value = {password} onChange = {(event)=>setPassword(event.target.value)} placeholder = "Enter your password"></input>
+                <br/>
+                <button type = "submit">
+                    Login
+                </button>
+            </form>
+            <p>{emailid}</p>
+            <p>{password}</p>
         </div>
     )
 }
