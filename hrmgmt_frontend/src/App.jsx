@@ -6,6 +6,9 @@ import Contact from './pages/Contact'
 import Services from './pages/Services'
 import Login from './pages/Login'
 import Regsiter from './pages/Register'
+import HrHome from './pages/HrHome'
+import AdminHome from './pages/AdminHome'
+import EmpHome from './pages/EmpHome'
 
 import {Routes, Route} from 'react-router-dom'
 import Register from './pages/Register'
@@ -22,6 +25,10 @@ function App() {
         <Route path = "/services" element = {<Services></Services>}></Route>
         <Route path = "/login" element = {<Login></Login>}></Route>
         <Route path = "/register" element = {<Register></Register>}></Route>
+        <Route path = "/hrhome" element = {<HrHome></HrHome>}></Route>
+        <Route path = "/emphome" element = {<EmpHome></EmpHome>}></Route>
+        <Route path = "/adminhome" element = {<AdminHome></AdminHome>}></Route>
+        
         
       </Routes>
 

@@ -1,9 +1,13 @@
 let express = require("express");
 let mongoose = require("mongoose")
+
+let cors = require('cors');
+
 let hrroutes = require("./routes/hr_routes");
 let emproutes = require("./routes/emp_routes");
 let app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use("/api/hr", hrroutes);
 app.use("/api/emp", emproutes);
